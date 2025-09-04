@@ -4,4 +4,4 @@
 Этот репозиторий является каркасом для будущего веб-приложения.
 
 ## Ссылки
-- [Публичная страница на GitHub Pages](https://github.com/talovns/project-front.git)
+- [Публичная страница на GitHub Pages](https://talovns.github.io/project-front/)
