@@ -11,15 +11,34 @@
 </head>
 <body>
     <header>
+        <div class="topMenu">
         <a href="index.html">
-    <img src="../assets/poni.jpg" alt="Mylttlponiserial" class="imgponi">
-        </a>    
+            <img src="../assets/new_logo.png" alt="Mylttlponiserial" class="imgponi">
+        </a>
+         <button class="theme-toggle" type="button" aria-pressed="false">Тема</button>
+            <script defer>
+                const KEY = 'theme', btn = document.querySelector('.theme-toggle');
+                const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+                // Автовыбор: системная тема или сохранённый выбор пользователя
+                if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
+                    prefersDark)) {
+                    document.body.classList.add('theme-dark');
+                    btn?.setAttribute('aria-pressed', 'true');
+                }
+                // Переключение по кнопке с сохранением в localStorage
+                btn?.addEventListener('click', () => {
+                    const isDark = document.body.classList.toggle('theme-dark');
+                    btn.setAttribute('aria-pressed', String(isDark));
+                    localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+                });
+            </script>
         <!-- Главное меню навигации -->
+         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
+               <li><a href="index.html" class="menu">Главная</a></li>
+                <li><a href="about.html" class="menu">О нас</a></li>
+                <li><a href="contacts.html" class="menu">Контакты</a></li>
             </ul>
         </nav>
     </header>
@@ -27,7 +46,7 @@
     <main>
         <!-- Простые "хлебные крошки" -->
         <nav aria-label="Хлебные крошки">
-            <a href="index.html">Главная</a> →
+            <a href="index.html" class="menu">Главная</a> →
             <span>О нас</span>
         </nav>
 
@@ -43,7 +62,8 @@
     </main>
 
     <footer>
-        ... <!-- Скопируйте весь блок <footer> из index.html -->
+        <p>&copy; 2023 Название вашего сайта. Все права защищены.</p>
+        <p>Телефон: +7 (123) 456-78-90</p>
     </footer>
 </body>
 </html>
