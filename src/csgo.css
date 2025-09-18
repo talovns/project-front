@@ -5,8 +5,13 @@
     --color-muted: #666;
     --color-primary: #0a84ff;
     --color-danger: #b00020;
-    --color-menu: rgb(70, 35, 168);
-    --color-hover: #c457da;
+    --color-menu: rgba(255, 255, 255, 0.548);
+    --color-hover: #fba9a3;
+    --color-icbg: rgb(152, 69, 171);
+    --color-activepg: rgb(205, 80, 155);
+    --color-activetext: rgb(255, 255, 255);
+
+
     /* Типографика и размеры */
     --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     --space-1: 4px;
@@ -76,9 +81,11 @@ body {
     line-height: 1.5;
 }
 
-body a {
+body menu{
     color: var(--color-menu);
 }
+
+
 
 body .menu:hover {
     color: var(--color-hover);
@@ -147,8 +154,11 @@ body.theme-dark {
     --color-bg: #333333;
     --color-fg: #f5f5f5;
     --color-muted: #aaa;
-    --color-menu: #da8779c2;
-    --color-hover: #bdc020;
+    --color-menu: rgba(0, 106, 255, 0.761);
+    --color-hover: #62b0de;
+    --color-icbg: rgb(233, 170, 81);
+    --color-activepg: rgb(139, 90, 3);
+    --color-activetext: rgba(255, 255, 255, 0.555);
 }
 
 
@@ -203,4 +213,28 @@ html {
     /* адаптивные
 отступы */
     border-radius: var(--radius);
+}
+
+.activePage {
+    background-color: var(--color-activepg);
+    color:var(--color-activetext);
+    padding: 5px 15px;
+    border-radius: 11px;
+}
+
+a {
+    text-decoration: none;
+    background-color: var(--color-icbg);
+    color: var(--color-menu);
+    padding: 5px 15px;
+    border-radius: 11px;
+}
+
+li {
+    margin: 15px auto;
+}
+
+
+#logo-link {
+  background: none;
 }
